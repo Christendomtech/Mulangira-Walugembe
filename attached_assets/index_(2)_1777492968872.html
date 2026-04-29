@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HRH Prince Edward Fredrick Walugembe</title>
+  <meta name="description" content="Official portfolio of HRH Prince Edward Fredrick Walugembe — Buganda Royal Family member, author, entrepreneur, and cultural diplomat." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================
+       DESIGN TOKENS
+       ================================================ */
+    :root {
+      --color-primary:        #6B1E2E;
+      --color-primary-ink:    #4A1320;
+      --color-secondary:      #F5EFE6;
+      --color-accent:         #B08D4C;
+      --color-text:           #141414;
+      --color-text-muted:     #555149;
+      --color-bg:             #FFFFFF;
+      --color-bg-soft:        #FAF7F1;
+      --color-rule:           rgba(20,20,20,0.10);
+
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body:    "Inter", system-ui, -apple-system, sans-serif;
+
+      --container: 1200px;
+      --prose: 720px;
+
+      --radius: 4px;
+      --ease: cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ================================================
+       BASE
+       ================================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; transition: color 180ms var(--ease); }
+    a:hover { color: var(--color-primary); }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 16px;
+    }
+
+    /* ================================================
+       HEADER
+       ================================================ */
+    header.site-header {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      padding: 28px 0;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .monogram {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+    .monogram .accent { color: var(--color-accent); }
+
+    nav.primary {
+      display: flex;
+      gap: 32px;
+    }
+    nav.primary a {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+    nav.primary a:hover { color: var(--color-accent); }
+
+    @media (max-width: 720px) {
+      nav.primary { display: none; }
+    }
+
+    /* ================================================
+       HERO
+       ================================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--color-primary-ink);
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg,
+        rgba(74,19,32,0.78) 0%,
+        rgba(74,19,32,0.55) 45%,
+        rgba(20,20,20,0.45) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ===== HERO IMAGE PROVISION =====
+       Drop your portrait into ./assets/hero-portrait.jpg
+       Recommended: 2400 x 1600 px, landscape, rights-cleared.
+       ================================ */
+    .hero-image {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      z-index: 0;
+    }
+    .hero-placeholder {
+      position: absolute; inset: 0;
+      z-index: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          #4A1320 0px, #4A1320 12px,
+          #5A1928 12px, #5A1928 24px
+        );
+      color: rgba(255,255,255,0.85);
+      padding: 32px;
+    }
+    .hero-placeholder .ph-inner {
+      max-width: 480px;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 32px 28px;
+    }
+    .hero-placeholder .ph-eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 12px;
+    }
+    .hero-placeholder h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .hero-placeholder p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+      margin: 0;
+    }
+    .hero-placeholder code {
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+      background: rgba(0,0,0,0.25);
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: var(--color-accent);
+    }
+    .hero[data-image="missing"] .hero-image { display: none; }
+    .hero[data-image="missing"] .hero-placeholder { display: flex; }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 140px 0 80px;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+      line-height: 1.05;
+      margin-bottom: 24px;
+      max-width: 16ch;
+    }
+    .hero h1 .styling {
+      display: block;
+      font-size: 0.32em;
+      font-family: var(--font-body);
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 18px;
+      line-height: 1;
+    }
+    .hero .lede {
+      max-width: 52ch;
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 36px;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      background: var(--color-accent);
+      color: var(--color-primary-ink);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: all 200ms var(--ease);
+    }
+    .hero-cta:hover {
+      background: #fff;
+      color: var(--color-primary);
+      transform: translateY(-1px);
+    }
+    .hero-cta .arrow { display: inline-block; transition: transform 200ms var(--ease); }
+    .hero-cta:hover .arrow { transform: translateX(4px); }
+
+    /* ================================================
+       STATEMENT
+       ================================================ */
+    .statement {
+      background: var(--color-secondary);
+      padding: 100px 0;
+    }
+    .statement .container {
+      max-width: var(--prose);
+      text-align: center;
+    }
+    .statement p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
+      line-height: 1.45;
+      color: var(--color-text);
+      margin: 0;
+    }
+    .statement .signature {
+      margin-top: 32px;
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    /* ================================================
+       PILLARS
+       ================================================ */
+    .pillars {
+      padding: 100px 0;
+      background: var(--color-bg);
+    }
+    .pillars .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+    @media (max-width: 860px) {
+      .pillars .grid { grid-template-columns: 1fr; gap: 56px; }
+    }
+    .pillar h3 { font-size: 28px; margin-bottom: 14px; }
+    .pillar p { color: var(--color-text-muted); margin: 0; }
+    .pillar .num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--color-accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    /* ================================================
+       VENTURES
+       ================================================ */
+    .ventures {
+      padding: 100px 0;
+      background: var(--color-bg-soft);
+    }
+    .section-head {
+      max-width: var(--prose);
+      margin: 0 auto 56px;
+      text-align: center;
+    }
+    .section-head h2 {
+      font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
+      margin-bottom: 16px;
+    }
+    .section-head p { color: var(--color-text-muted); margin: 0; }
+    .venture-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    @media (max-width: 860px) {
+      .venture-grid { grid-template-columns: 1fr; }
+    }
+    .venture {
+      background: #fff;
+      border: 1px solid var(--color-rule);
+      padding: 40px 32px;
+      transition: all 240ms var(--ease);
+    }
+    .venture:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+    .venture .tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+    }
+    .venture h3 { font-size: 26px; margin-bottom: 14px; }
+    .venture p {
+      color: var(--color-text-muted);
+      font-size: 15px;
+      margin: 0 0 20px;
+    }
+    .venture .more {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    /* ================================================
+       BOOKS
+       ================================================ */
+    .books {
+      padding: 100px 0;
+      background: var(--color-secondary);
+    }
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+    @media (max-width: 860px) {
+      .book-grid { grid-template-columns: 1fr; gap: 56px; }
+    }
+    .book { display: flex; flex-direction: column; }
+    .book-cover {
+      position: relative;
+      aspect-ratio: 2 / 3;
+      background: var(--color-primary-ink);
+      margin-bottom: 28px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px -20px rgba(74,19,32,0.4);
+      transition: transform 240ms var(--ease), box-shadow 240ms var(--ease);
+    }
+    .book:hover .book-cover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px -20px rgba(74,19,32,0.55);
+    }
+    .book-cover img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .book-cover-placeholder {
+      position: absolute; inset: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          #4A1320 0px, #4A1320 10px,
+          #5A1928 10px, #5A1928 20px
+        );
+      color: rgba(255,255,255,0.85);
+    }
+    .book-cover[data-image="missing"] img { display: none; }
+    .book-cover[data-image="missing"] .book-cover-placeholder { display: flex; }
+    .book-cover-placeholder .ph-mark {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .book-cover-placeholder .ph-text {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+    }
+    .book-meta {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .book h3 { font-size: 26px; margin-bottom: 12px; }
+    .book .blurb {
+      color: var(--color-text-muted);
+      font-size: 15px;
+      margin: 0 0 18px;
+    }
+    .book .more {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      font-weight: 500;
+      margin-top: auto;
+    }
+
+    /* ================================================
+       CONTACT
+       ================================================ */
+    .contact {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .contact p {
+      max-width: 50ch;
+      margin: 0 auto 36px;
+      color: rgba(255,255,255,0.85);
+    }
+    .contact .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--color-accent);
+      color: var(--color-primary-ink);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: all 200ms var(--ease);
+    }
+    .contact .btn:hover {
+      background: #fff;
+      color: var(--color-primary);
+    }
+
+    /* ================================================
+       FOOTER
+       ================================================ */
+    footer.site-footer {
+      background: var(--color-primary-ink);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 0;
+      font-size: 14px;
+    }
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer .monogram { font-size: 18px; }
+    footer nav { display: flex; gap: 24px; }
+    footer nav a { color: rgba(255,255,255,0.7); font-size: 13px; }
+    footer nav a:hover { color: var(--color-accent); }
+    footer .credit {
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="monogram">Prince <span class="accent">&middot;</span> Walugembe</a>
+      <nav class="primary" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#ventures">Work</a>
+        <a href="#books">Books</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO  ·  Replace image: assets/hero-portrait.jpg -->
+  <section class="hero" id="hero">
+    <img
+      class="hero-image"
+      src="assets/hero-portrait.jpg"
+      alt="HRH Prince Edward Fredrick Walugembe"
+      onerror="this.parentElement.setAttribute('data-image','missing')"
+    />
+    <div class="hero-placeholder" aria-hidden="true">
+      <div class="ph-inner">
+        <div class="ph-eyebrow">Image provision</div>
+        <h3>Add the principal portrait here</h3>
+        <p>
+          Drop a high-resolution portrait at
+          <code>./assets/hero-portrait.jpg</code>.
+          Recommended: 2400 &times; 1600 px or larger, landscape orientation,
+          rights-cleared.
+        </p>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="container">
+        <h1>
+          <span class="styling">His Royal Highness</span>
+          Prince Edward Fredrick Walugembe
+        </h1>
+        <p class="lede">
+          A member of the Buganda Royal Family &mdash; author, entrepreneur,
+          and cultural diplomat &mdash; advancing heritage, enterprise, and
+          the written word from the Pearl of Africa to the wider world.
+        </p>
+        <a href="#contact" class="hero-cta">
+          Begin a conversation
+          <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement" id="about">
+    <div class="container">
+      <p>
+        &ldquo;Heritage is the soil. Enterprise is the harvest.
+        Service is what we owe both.&rdquo;
+      </p>
+      <div class="signature">&mdash; A guiding principle</div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Three pillars</div>
+        <h2>The work, in brief</h2>
+        <p>A life organised around three commitments &mdash; each rooted in the others.</p>
+      </div>
+      <div class="grid">
+        <article class="pillar">
+          <div class="num">I.</div>
+          <h3>Heritage</h3>
+          <p>Stewarding the cultural inheritance of the Buganda Kingdom through respectful representation, education, and the preservation of memory.</p>
+        </article>
+        <article class="pillar">
+          <div class="num">II.</div>
+          <h3>Enterprise</h3>
+          <p>Building bridges between Ugandan agriculture, tourism, and global markets &mdash; coffee, trade, and investment as engines of dignified livelihoods.</p>
+        </article>
+        <article class="pillar">
+          <div class="num">III.</div>
+          <h3>Service</h3>
+          <p>Patronage of causes that lift the next generation: education, youth empowerment, and the quiet work of cultural diplomacy.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENTURES -->
+  <section class="ventures" id="ventures">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Selected work</div>
+        <h2>Ventures &amp; engagements</h2>
+        <p>A portfolio spanning agriculture, hospitality, and trade.</p>
+      </div>
+      <div class="venture-grid">
+        <article class="venture">
+          <span class="tag">Agriculture</span>
+          <h3>Coffee</h3>
+          <p>Connecting Ugandan coffee to discerning buyers abroad &mdash; quality at origin, fair value at destination.</p>
+          <a href="#contact" class="more">Discuss a partnership &rarr;</a>
+        </article>
+        <article class="venture">
+          <span class="tag">Hospitality</span>
+          <h3>Tourism</h3>
+          <p>Curated experiences across Uganda&rsquo;s national parks, heritage sites, and royal landmarks &mdash; hosted with personal care.</p>
+          <a href="#contact" class="more">Plan a visit &rarr;</a>
+        </article>
+        <article class="venture">
+          <span class="tag">Markets</span>
+          <h3>Trade &amp; investment</h3>
+          <p>Facilitating responsible inbound investment across agro-commodities, real estate, and cross-border trade with East Africa.</p>
+          <a href="#contact" class="more">Open a dialogue &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKS  ·  Replace covers at: assets/book-1.jpg, book-2.jpg, book-3.jpg
+       Recommended cover ratio: 2:3 (portrait), e.g. 1200 x 1800 px.
+       Replace placeholder titles, years, and blurbs with the real ones. -->
+  <section class="books" id="books">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Selected works</div>
+        <h2>Books</h2>
+        <p>Reflections on heritage, leadership, and the long arc of African enterprise &mdash; written from inside the tradition, for readers everywhere.</p>
+      </div>
+      <div class="book-grid">
+
+        <!-- BOOK 1 -->
+        <article class="book">
+          <div class="book-cover">
+            <img
+              src="assets/book-1.jpg"
+              alt="Cover of book one"
+              onerror="this.parentElement.setAttribute('data-image','missing')"
+            />
+            <div class="book-cover-placeholder" aria-hidden="true">
+              <div class="ph-mark">I</div>
+              <div class="ph-text">Cover &middot; book-1.jpg</div>
+            </div>
+          </div>
+          <div class="book-meta">Year &middot; Genre</div>
+          <h3>Book Title One</h3>
+          <p class="blurb">A short blurb describing the book&rsquo;s central argument and why it matters now. Replace this with the principal&rsquo;s own words about the work.</p>
+          <a href="#contact" class="more">Request a copy &rarr;</a>
+        </article>
+
+        <!-- BOOK 2 -->
+        <article class="book">
+          <div class="book-cover">
+            <img
+              src="assets/book-2.jpg"
+              alt="Cover of book two"
+              onerror="this.parentElement.setAttribute('data-image','missing')"
+            />
+            <div class="book-cover-placeholder" aria-hidden="true">
+              <div class="ph-mark">II</div>
+              <div class="ph-text">Cover &middot; book-2.jpg</div>
+            </div>
+          </div>
+          <div class="book-meta">Year &middot; Genre</div>
+          <h3>Book Title Two</h3>
+          <p class="blurb">A second short blurb &mdash; keep these to two or three sentences. Mention the audience, the question driving the book, and the insight readers will leave with.</p>
+          <a href="#contact" class="more">Request a copy &rarr;</a>
+        </article>
+
+        <!-- BOOK 3 -->
+        <article class="book">
+          <div class="book-cover">
+            <img
+              src="assets/book-3.jpg"
+              alt="Cover of book three"
+              onerror="this.parentElement.setAttribute('data-image','missing')"
+            />
+            <div class="book-cover-placeholder" aria-hidden="true">
+              <div class="ph-mark">III</div>
+              <div class="ph-text">Cover &middot; book-3.jpg</div>
+            </div>
+          </div>
+          <div class="book-meta">Year &middot; Genre</div>
+          <h3>Book Title Three</h3>
+          <p class="blurb">A third short blurb. If the principal has only one or two books, simply remove the unused articles &mdash; the grid adapts automatically.</p>
+          <a href="#contact" class="more">Request a copy &rarr;</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="eyebrow" style="color: var(--color-accent)">Connect</div>
+      <h2>Begin a conversation</h2>
+      <p>For partnership, press, or formal correspondence, the office receives enquiries by email and reviews each personally.</p>
+      <a href="mailto:hello@example.com?subject=Enquiry%20%E2%80%94%20Office%20of%20HRH" class="btn">Write to the office</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <a href="#" class="monogram">Prince <span style="color: var(--color-accent)">&middot;</span> Walugembe</a>
+      <nav aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#ventures">Work</a>
+        <a href="#books">Books</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="credit">
+        &copy; <span id="year"></span> The Office of HRH Prince Edward Fredrick Walugembe.
+        All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

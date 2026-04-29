@@ -24,4 +24,9 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
+## Artifacts
+
+- **portfolio** (`artifacts/portfolio`) — React + Vite portfolio landing page for HRH Prince Edward Fredrick Walugembe. Single-page app with sections: Hero, Statement, Pillars, Ventures, Books, Contact, Footer. Themed with Buganda Kingdom royal colors (Deep Crimson #7C1C32, Dark Maroon #4D0F1E, Ceremonial Gold #C9973A). Fonts: Cormorant Garamond (display) + Inter (body). Served at `/`.
+- **api-server** (`artifacts/api-server`) — Express 5 backend, currently only serves `/api/healthz`.
+
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.

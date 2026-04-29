@@ -1,0 +1,60 @@
+Build a static HTML landing page for a portfolio website.
+
+PROJECT TYPE
+Pure static HTML — no React, no Next.js, no build tools, no npm packages,
+no bundlers. A single index.html file with embedded CSS and minimal
+inline JavaScript. Nothing more.
+
+FILES TO CREATE
+
+1. /index.html
+   Use the contents of the index.html file I have attached to this chat.
+   Place it at the project root, exactly as provided. Do not modify the
+   markup, the CSS, or the JavaScript. Do not "improve," refactor, or
+   reformat anything inside it.
+
+2. /assets/
+   Create an empty folder named "assets" at the project root. I will
+   upload image files into this folder myself. The expected filenames
+   are:
+     - assets/hero-portrait.jpg   (hero background portrait, 2400x1600)
+     - assets/book-1.jpg          (book cover, 1200x1800, 2:3 ratio)
+     - assets/book-2.jpg          (book cover, 1200x1800, 2:3 ratio)
+     - assets/book-3.jpg          (book cover, 1200x1800, 2:3 ratio)
+   Do NOT generate placeholder images. The HTML already handles missing
+   images gracefully with built-in CSS placeholders.
+
+3. /.replit
+   Configure the run command to serve the project as a static site on
+   port 8080 using Python's built-in HTTP server:
+       python3 -m http.server 8080
+   Set the entrypoint to index.html and ensure the Replit webview opens
+   automatically when the project runs.
+
+4. /README.md
+   A short README with:
+     - Project name: "HRH Prince Edward Fredrick Walugembe — Portfolio"
+     - One-paragraph description
+     - Instructions: "Drop image files into the /assets folder using the
+       filenames listed above. Click Run to view the site."
+
+WHAT NOT TO DO
+- Do not install any npm packages.
+- Do not add a package.json.
+- Do not introduce a framework, bundler, or transpiler.
+- Do not split the HTML into separate CSS or JS files.
+- Do not change fonts, colours, copy, structure, or layout.
+- Do not add analytics, tracking pixels, or third-party widgets.
+- Do not generate placeholder images for the assets folder.
+
+VERIFICATION
+After setup, run the project and confirm:
+  - The webview loads index.html at the root URL.
+  - The page renders without console errors.
+  - The hero placeholder shows where assets/hero-portrait.jpg is missing.
+  - The three book cover placeholders show where book covers are missing.
+  - All in-page navigation links scroll to the correct sections.
+  - The footer year displays the current year.
+
+Once the project is running and verified, stop. Do not make further
+changes unless I ask.
