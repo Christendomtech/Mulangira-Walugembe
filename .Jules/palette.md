@@ -1,0 +1,3 @@
+## 2025-05-22 - Accessibility Fundamentals in Portfolio
+**Learning:** For high-end personal portfolios, accessibility must be integrated without compromising the luxury aesthetic. Key patterns include 'Skip to Content' links for long hero sections and distinct focus-visible rings that match the accent palette. Descriptive ARIA labels are essential when using generic action text like "Explore" or "Request".
+**Action:** Always implement a 'Skip to Content' link as the first focusable element. Ensure all interactive elements have `focus-visible` styles using the theme's accent color. Use template literals for ARIA labels in mapping loops to provide specific context.
