@@ -1,0 +1,3 @@
+## 2025-05-15 - Accessibility and Keyboard Navigation Enhancement
+**Learning:** Standard navigation and repetitive links (like "Explore" or "Request a copy") without unique ARIA labels create a poor experience for screen reader users. Additionally, lack of "Skip to Content" links and clear `focus-visible` styles hinders keyboard-only navigation.
+**Action:** Always implement "Skip to Content" links targeting `id="main-content"`, use descriptive ARIA labels for repetitive link text (e.g., 'Explore [Subject]'), and ensure `focus-visible` styles (rings and offsets) are applied to all interactive elements to meet accessibility standards.
