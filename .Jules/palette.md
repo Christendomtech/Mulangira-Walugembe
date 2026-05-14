@@ -1,0 +1,3 @@
+## 2025-05-15 - Accessibility: Skip to Content & Semantic Landmarks
+**Learning:** Implementing 'Skip to Content' links (targeting `id="main-content"`) and using semantic `<main>` landmarks significantly improves keyboard and screen reader navigation. For 'Skip to Content' to work properly without a visual ring on the container, the target element needs `tabIndex={-1}` and `outline-none`.
+**Action:** Always include a 'Skip to Content' link as the first focusable element on any page with a complex header/nav, and ensure main content is wrapped in a `<main>` landmark with appropriate focus management.
