@@ -1,0 +1,3 @@
+## 2025-05-15 - Essential Accessibility Pattern: Skip Links & Focus Indicators
+**Learning:** This portfolio project initially lacked standard keyboard navigation aids. In high-contrast or primary-colored layouts like this one, standard browser focus rings can be hard to see or inconsistent. Implementing a custom 'Skip to Content' link and explicit 'focus-visible' ring styles using the 'accent' color ensures the UI remains navigable and accessible without compromising the aesthetic.
+**Action:** For every new interactive element, apply 'focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:outline-none' to maintain accessibility consistency across the brand identity.
