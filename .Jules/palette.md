@@ -1,0 +1,3 @@
+## 2025-05-15 - [Improving keyboard-only navigation accessibility]
+**Learning:** Many custom-styled sites overlook basic keyboard navigation, such as "Skip to Content" links and clear focus indicators. Implementing these at the global level ensures consistency across all interactive elements and provides a smoother experience for users relying on screen readers or keyboard-only input.
+**Action:** Always include a 'Skip to Content' link targeting the main content area (e.g., `#main-content`) and define global `focus-visible` styles in the main stylesheet to provide clear visual feedback during keyboard navigation.
