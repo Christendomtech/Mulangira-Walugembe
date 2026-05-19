@@ -1,0 +1,3 @@
+## 2025-05-19 - Standardized Accessibility Patterns for Portfolio Sites
+**Learning:** Implementing 'Skip to Content' links (targeting `id="main-content"`), using descriptive ARIA labels for repetitive link text (e.g., 'Explore [Subject]'), and applying consistent `focus-visible` styles significantly improves the navigation experience for keyboard and screen reader users without impacting the visual design for others.
+**Action:** Apply these patterns (Skip link, main content target, aria-labels for generic links, and focus-visible indicators) as a baseline for any portfolio or content-heavy site to ensure immediate accessibility compliance.
