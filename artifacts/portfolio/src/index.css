@@ -149,3 +149,9 @@
     @apply font-serif tracking-tight;
   }
 }
+
+@layer utilities {
+  .skip-to-content {
+    @apply absolute left-4 top-4 -translate-y-[200%] bg-accent text-white px-4 py-2 z-[100] transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded-sm text-sm font-medium uppercase tracking-wider;
+  }
+}
