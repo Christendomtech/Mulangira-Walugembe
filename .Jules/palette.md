@@ -1,0 +1,3 @@
+## 2025-05-24 - Enhancing Portfolio Accessibility
+**Learning:** Standardizing accessibility features like "Skip to Content" links and semantic `<main>` wrappers significantly improves the experience for keyboard and screen reader users without impacting the visual design for others. Using `focus-visible` ensures that focus indicators only appear when relevant (i.e., keyboard navigation), maintaining visual polish for mouse users.
+**Action:** Always implement a "Skip to Content" link targeting a `#main-content` wrapper with `tabIndex={-1}` and `outline-none` in high-content landing pages. Ensure decorative icons have `aria-hidden="true"` and repetitive links have descriptive `aria-label` attributes.
