@@ -31,6 +31,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-accent selection:text-white">
+      <a href="#main-content" className="skip-to-content">
+        Skip to content
+      </a>
+
       {/* Navigation */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent ${
@@ -50,6 +54,7 @@ export default function Home() {
         </div>
       </nav>
 
+      <main id="main-content" tabIndex={-1} className="outline-none">
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -194,7 +199,11 @@ export default function Home() {
                 <p className="text-muted-foreground leading-relaxed font-light mb-8 flex-grow z-10">
                   {venture.desc}
                 </p>
-                <a href="#contact" className="inline-flex items-center gap-2 text-accent text-sm uppercase tracking-wider font-medium group-hover:text-primary transition-colors z-10">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 text-accent text-sm uppercase tracking-wider font-medium group-hover:text-primary transition-colors z-10"
+                  aria-label={`Explore ${venture.title} details`}
+                >
                   Explore <ExternalLink className="w-3 h-3" />
                 </a>
               </motion.div>
@@ -263,7 +272,11 @@ export default function Home() {
                 <p className="text-muted-foreground font-light mb-6 text-sm leading-relaxed">
                   {book.blurb}
                 </p>
-                <a href="#contact" className="inline-flex items-center gap-2 text-primary border-b border-primary/30 pb-1 text-sm font-medium uppercase tracking-wider group-hover:border-accent group-hover:text-accent transition-colors">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 text-primary border-b border-primary/30 pb-1 text-sm font-medium uppercase tracking-wider group-hover:border-accent group-hover:text-accent transition-colors"
+                  aria-label={`Request a copy of ${book.title}`}
+                >
                   Request a copy <ArrowRight className="w-3 h-3" />
                 </a>
               </motion.div>
@@ -295,6 +308,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer className="bg-[#4D0F1E] py-12 border-t border-white/10">
