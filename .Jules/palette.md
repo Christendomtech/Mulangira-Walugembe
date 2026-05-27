@@ -1,0 +1,3 @@
+## 2025-05-23 - Accessibility Standards for Portfolio
+**Learning:** In a content-heavy portfolio with repetitive interaction patterns (like "Explore" or "Request a copy" links), screen reader users benefit greatly from descriptive ARIA labels that provide context for each link. Additionally, a "Skip to Content" link is essential for keyboard navigation to bypass repetitive navigation menus.
+**Action:** Always implement 'Skip to Content' links (targeting id="main-content") and use descriptive ARIA labels for repetitive links by incorporating item titles (e.g., 'Explore [Subject]'). Ensure the target element has tabIndex={-1} and outline-none.
