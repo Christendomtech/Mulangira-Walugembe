@@ -1,0 +1,3 @@
+## 2025-05-15 - Accessibility Foundations for Portfolio
+**Learning:** Portfolio sites with many repeating sections (Ventures, Books) benefit significantly from descriptive ARIA labels to distinguish repetitive link text ("Explore", "Request a copy") for screen reader users. Implementing a "Skip to Content" link is a critical first step for keyboard navigation in single-page layouts.
+**Action:** Always include a `.skip-to-content` utility in `index.css` and wrap the primary content in a `<main id="main-content" tabIndex={-1} className="outline-none">` to facilitate accessible bypass navigation. Use `aria-label={`[Action] ${item.title}`} patterns for repetitive interactive elements.
