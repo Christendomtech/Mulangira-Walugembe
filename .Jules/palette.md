@@ -1,0 +1,3 @@
+## 2025-03-24 - Accessibility and Semantic Markers
+**Learning:** For high-end portfolio sites with hidden navigation or complex layouts, "Skip to Content" links and clear `focus-visible` indicators are essential for keyboard accessibility without compromising the visual aesthetic. Repetitive links like "Explore" or "Request a copy" require unique `aria-label` attributes to provide context to screen reader users.
+**Action:** Always implement a `.skip-to-content` utility, wrap primary content in `<main id="main-content">`, and ensure all interactive elements have visible focus states and descriptive ARIA labels for repetitive actions.
