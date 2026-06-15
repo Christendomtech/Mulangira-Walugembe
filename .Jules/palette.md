@@ -1,0 +1,3 @@
+## 2025-05-14 - Standardizing Accessibility Bypass and Focus Indicators
+**Learning:** The portfolio application lacked a "Skip to content" bypass and consistent focus indicators, which are critical for keyboard-only users. Repetitive links like "Explore" and "Request a copy" also lacked context for screen readers.
+**Action:** Implement a standardized `.skip-to-content` utility class, wrap primary content in `<main id="main-content" tabIndex={-1}>`, and apply global `focus-visible` ring styles to all `a` and `button` elements. Use template literals for ARIA labels on repetitive map-generated links (e.g., `aria-label={`Explore ${item.title} details`}`).
