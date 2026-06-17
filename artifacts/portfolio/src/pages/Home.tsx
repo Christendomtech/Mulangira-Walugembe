@@ -31,6 +31,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-accent selection:text-white">
+      <a href="#main-content" className="skip-to-content">
+        Skip to content
+      </a>
+
       {/* Navigation */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent ${
@@ -38,20 +42,25 @@ export default function Home() {
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-          <Link href="/" className="font-serif text-2xl font-medium tracking-wide flex items-center gap-1 text-white hover:text-accent transition-colors">
-            Prince <span className="text-accent text-xl">·</span> Walugembe
+          <Link
+            href="/"
+            className="font-serif text-2xl font-medium tracking-wide flex items-center gap-1 text-white hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm"
+            aria-label="Prince Edward Walugembe - Home"
+          >
+            Prince <span className="text-accent text-xl" aria-hidden="true">·</span> Walugembe
           </Link>
           <div className="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-white/80 font-medium">
-            <a href="#about" className="hover:text-accent transition-colors duration-300">About</a>
-            <a href="#work" className="hover:text-accent transition-colors duration-300">Work</a>
-            <a href="#books" className="hover:text-accent transition-colors duration-300">Books</a>
-            <a href="#contact" className="hover:text-accent transition-colors duration-300">Contact</a>
+            <a href="#about" className="hover:text-accent transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm">About</a>
+            <a href="#work" className="hover:text-accent transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm">Work</a>
+            <a href="#books" className="hover:text-accent transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm">Books</a>
+            <a href="#contact" className="hover:text-accent transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm">Contact</a>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative min-h-[100dvh] flex items-center justify-center bg-primary overflow-hidden">
+      <main id="main-content" tabIndex={-1} className="outline-none">
+        {/* Hero Section */}
+        <section className="relative min-h-[100dvh] flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#4D0F1E]/80 mix-blend-multiply z-10"></div>
           {/* Missing Image Placeholder */}
@@ -77,9 +86,9 @@ export default function Home() {
             </p>
             <a 
               href="#contact"
-              className="inline-flex items-center gap-2 border border-accent text-accent px-8 py-4 rounded-sm hover:bg-accent hover:text-white transition-all duration-300 uppercase tracking-widest text-sm font-medium group"
+              className="inline-flex items-center gap-2 border border-accent text-accent px-8 py-4 rounded-sm hover:bg-accent hover:text-white transition-all duration-300 uppercase tracking-widest text-sm font-medium group focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none"
             >
-              Begin a conversation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Begin a conversation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
           </motion.div>
         </div>
@@ -194,8 +203,12 @@ export default function Home() {
                 <p className="text-muted-foreground leading-relaxed font-light mb-8 flex-grow z-10">
                   {venture.desc}
                 </p>
-                <a href="#contact" className="inline-flex items-center gap-2 text-accent text-sm uppercase tracking-wider font-medium group-hover:text-primary transition-colors z-10">
-                  Explore <ExternalLink className="w-3 h-3" />
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 text-accent text-sm uppercase tracking-wider font-medium group-hover:text-primary transition-colors z-10 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm"
+                  aria-label={`Explore ${venture.title} details`}
+                >
+                  Explore <ExternalLink className="w-3 h-3" aria-hidden="true" />
                 </a>
               </motion.div>
             ))}
@@ -263,8 +276,12 @@ export default function Home() {
                 <p className="text-muted-foreground font-light mb-6 text-sm leading-relaxed">
                   {book.blurb}
                 </p>
-                <a href="#contact" className="inline-flex items-center gap-2 text-primary border-b border-primary/30 pb-1 text-sm font-medium uppercase tracking-wider group-hover:border-accent group-hover:text-accent transition-colors">
-                  Request a copy <ArrowRight className="w-3 h-3" />
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 text-primary border-b border-primary/30 pb-1 text-sm font-medium uppercase tracking-wider group-hover:border-accent group-hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm"
+                  aria-label={`Request a copy of ${book.title}`}
+                >
+                  Request a copy <ArrowRight className="w-3 h-3" aria-hidden="true" />
                 </a>
               </motion.div>
             ))}
@@ -288,26 +305,31 @@ export default function Home() {
             </p>
             <a 
               href="mailto:contact@princeedwardwalugembe.com"
-              className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-sm hover:bg-white hover:text-primary transition-all duration-300 uppercase tracking-widest text-sm font-medium"
+              className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-sm hover:bg-white hover:text-primary transition-all duration-300 uppercase tracking-widest text-sm font-medium focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary outline-none"
             >
-              <Mail className="w-4 h-4" /> Send Email
+              <Mail className="w-4 h-4" aria-hidden="true" /> Send Email
             </a>
           </motion.div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="bg-[#4D0F1E] py-12 border-t border-white/10">
         <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-serif text-xl tracking-wide flex items-center gap-1 text-white/90">
-            Prince <span className="text-accent text-lg">·</span> Walugembe
-          </div>
+          <Link
+            href="/"
+            className="font-serif text-xl tracking-wide flex items-center gap-1 text-white/90 hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm"
+            aria-label="Prince Edward Walugembe - Home"
+          >
+            Prince <span className="text-accent text-lg" aria-hidden="true">·</span> Walugembe
+          </Link>
           
           <div className="flex gap-6 text-sm uppercase tracking-wider text-white/50 font-medium">
-            <a href="#about" className="hover:text-accent transition-colors">About</a>
-            <a href="#work" className="hover:text-accent transition-colors">Work</a>
-            <a href="#books" className="hover:text-accent transition-colors">Books</a>
-            <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+            <a href="#about" className="hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm">About</a>
+            <a href="#work" className="hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm">Work</a>
+            <a href="#books" className="hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm">Books</a>
+            <a href="#contact" className="hover:text-accent transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm">Contact</a>
           </div>
 
           <div className="text-white/40 text-sm font-light">
