@@ -1,0 +1,3 @@
+## 2025-05-14 - Accessibility & Keyboard Navigation Foundations
+**Learning:** Standardizing accessibility foundations (skip-to-content links, global focus indicators, and semantic landmarks) provides an immediate and significant UX improvement for keyboard and screen reader users with minimal code changes. Global focus-visible styles in Tailwind's `@layer base` ensure that no interactive element is left without a clear focus state.
+**Action:** Always implement a skip-to-content link targeting a `<main id="main-content" tabIndex={-1}>` wrapper and apply global focus-visible rings to `a` and `button` elements in new projects.
