@@ -148,4 +148,14 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
   }
+  a,
+  button {
+    @apply focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 outline-none rounded-sm;
+  }
+}
+
+@layer utilities {
+  .skip-to-content {
+    @apply absolute -top-20 left-4 z-[100] bg-accent text-white px-4 py-2 transition-all focus:top-4 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
 }
