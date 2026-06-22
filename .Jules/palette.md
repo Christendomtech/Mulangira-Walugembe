@@ -1,0 +1,3 @@
+## 2025-05-22 - [Standardized Accessibility Bypass and Focus Indicators]
+**Learning:** For high-end portfolios, accessibility shouldn't clutter the visual design but must remain robust. Implementing a 'Skip to Content' link that is visually hidden until focus, combined with explicit `focus-visible` ring styles, ensures a high-quality keyboard navigation experience without impacting the minimalist aesthetic.
+**Action:** Always implement a `.skip-to-content` utility in `index.css` and wrap the primary content sections in a `<main id="main-content" tabIndex={-1} className="outline-none">` to provide a reliable focus target for bypass links.
