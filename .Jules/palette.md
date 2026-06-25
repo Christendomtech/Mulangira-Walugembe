@@ -1,0 +1,3 @@
+## 2025-05-15 - Enhancing Accessibility Foundations
+**Learning:** Standard portfolio templates often miss basic accessibility features like "Skip to Content" links and semantic <main> tags, which are critical for keyboard and screen reader navigation. Branding/logo elements in the header and footer should be implemented as semantic focusable links to support standard navigation expectations. Decorative separators (like dots) should be wrapped in aria-hidden="true" to avoid screen reader noise.
+**Action:** Always verify the presence of a bypass link and semantic main container. Ensure all brand logos are interactive Links and decorative characters are hidden from AT.
