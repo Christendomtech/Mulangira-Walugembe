@@ -1,0 +1,3 @@
+## 2025-05-14 - Global Accessibility Improvements
+**Learning:** Standardizing accessibility patterns like "Skip to content" links, semantic main wrappers, and descriptive ARIA labels for repetitive actions significantly improves the experience for assistive technology users without compromising the visual design. Wrapping decorative separators in `aria-hidden="true"` prevents screen reader clutter in branding and metadata.
+**Action:** Always implement a skip-to-content bypass link and a properly labeled `<main>` element. Use descriptive ARIA labels for links that have generic visible text like "Explore" or "Request a copy".
