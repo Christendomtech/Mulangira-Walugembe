@@ -1,0 +1,3 @@
+## 2025-05-15 - Accessibility Foundations for Portfolio Sites
+**Learning:** Repetitive "call to action" links (like "Explore" or "Request a copy") in grid layouts are a common accessibility hurdle for screen reader users as they lack context when navigated out of order. Standardizing on the `[Action] [Item Name]` pattern for `aria-label` significantly improves the experience. Additionally, bypass links ("Skip to content") and semantic `<main>` wrappers are essential for keyboard-only navigation in long landing pages.
+**Action:** Always implement descriptive `aria-label` for repetitive links and ensure a bypass link is present in all multi-section landing pages.
