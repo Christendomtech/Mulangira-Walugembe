@@ -1,0 +1,3 @@
+## 2025-05-15 - [Accessibility] Standardized focus-visible and skip-to-content patterns
+**Learning:** Standardized accessibility patterns (Skip Link, main wrapper, descriptive ARIA labels) significantly improve keyboard and screen reader navigation without impacting visual design. Playwright's `to_be_hidden()` assertion treats off-screen elements as visible if they have dimensions; verify focusability or specific top/left offsets instead.
+**Action:** Always include a `.skip-to-content` link and `<main id="main-content">` wrapper. Use unique ARIA labels for repetitive actions (e.g., 'Explore {item}') and hide decorative separators.
