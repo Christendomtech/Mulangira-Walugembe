@@ -1,0 +1,3 @@
+## 2025-07-24 - Accessible Bypass Links & Distinct Interactive Labels
+**Learning:** For multi-section high-fidelity portfolios, standard keyboard and screen-reader accessibility requires a dedicated visual and non-visual 'Skip to content' link that bypasses repetitive navigation blocks. Additionally, branding elements and repetitive card CTAs (e.g., 'Explore', 'Request a copy') require explicit and unique ARIA labels using semantic '[Action] [Item Name]' naming conventions to ensure screen reader users do not receive ambiguous, repetitive cues.
+**Action:** Always include a `.skip-to-content` utility linking to a focused `<main>` element and programmatically split metadata separators to isolate decorative glyphs from screen readers.
