@@ -1,0 +1,5 @@
+## 2025-07-26 - Keyboard Navigation and Focus Indicators in Modern Semantic Layouts
+
+**Learning:** In highly visual portfolio designs, relying solely on default native focus indicators can fail to provide visual clarity when customized color schemes are used. Non-interactive container wrappers with cursor-pointer confuse accessibility tree users. Splitting and wrapping dynamic separators in metadata programmatically ensures screen readers are not burdened by unannounced punctuation elements, and focus utilities (like focus ring + offset) must be matched with the site's accent theme for maximum keyboard readability.
+
+**Action:** When designing customized components, ensure that non-interactive card blocks do not use mouse cursor pointers, dynamic meta text separators are programmatically wrapped in `<span aria-hidden="true"> · </span>` using split mappings with Fragment, and uniform keyboard focus indicators (`focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2`) are applied to all custom and standard interactive controls.
