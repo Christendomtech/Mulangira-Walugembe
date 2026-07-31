@@ -1,0 +1,3 @@
+## 2025-03-09 - [Skip Link, Custom Utilities & Accessible Text Separators]
+**Learning:** Playwright assertions for visibility require elements to be physically hidden (`display: none` or `visibility: hidden`) rather than just visually positioned off-screen. Additionally, text separators (like dot characters '·') in headings or metadata blocks are read aloud by screen readers as punctuation, cluttering the experience.
+**Action:** When creating skip links, verify keyboard focus activates and moves focus to `<main id="main-content" tabIndex={-1}>`. Standardize using programmatic `split` on metadata blocks with custom templates to programmatically wrap dividers inside `aria-hidden="true"` spans, and wrap visual/decorative characters in `aria-hidden="true"`.
