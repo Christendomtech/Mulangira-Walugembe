@@ -1,0 +1,3 @@
+## 2025-08-02 - Keyboard Nav & Screen Reader Contrast
+**Learning:** Adding skip-to-content anchors allows keyboard-only and screen reader users to completely bypass heavy global navigation headers. For decorative layout delimiters like branding/metadata dots (·), wrapping them in aria-hidden ensures screen readers do not read out loud confusing repetitive characters, while descriptive dynamic aria-labels on generic links provide unambiguous call-to-action contexts.
+**Action:** Always wrap typographic decoration separators in `<span aria-hidden="true">` and programmatically map/split them on dynamic lists; provide unique aria-labels for simple actionable verbs like "Explore" and "Request".
