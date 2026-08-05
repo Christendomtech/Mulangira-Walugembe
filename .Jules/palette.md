@@ -1,0 +1,3 @@
+## 2025-03-09 - [Skip Link & Screen Reader Separator Accessibility Patterns]
+**Learning:** Custom utility styles in Tailwind CSS v4 must nest state variants (e.g., `&:focus-visible`) inside the `@utility` block instead of registering them as separate classes, or compilation fails. Additionally, decorative dot separators (like `·`) should be wrapped in `aria-hidden="true"` programmatically or explicitly, and non-interactive containers must never carry interactive hover markers like `cursor-pointer`.
+**Action:** Always verify decorative separators inside dynamic lists by `.split()`-ing and mapping over elements to inject `<span aria-hidden="true">·</span>`, keep custom Tailwind utility states nested, and keep hover cues exclusively on semantic focusable elements.
