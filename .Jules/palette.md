@@ -1,0 +1,3 @@
+## 2025-02-13 - Semantic Navigation & Accessible Interactive Separation
+**Learning:** Combining non-interactive container hover states with inner interactive elements (like 'cursor-pointer' on book covers containing distinct links) causes confusion for keyboard/screen-reader users. Interaction handles must align with semantic elements, and fixed header offsets should use scroll-padding utilities for seamless anchor navigation.
+**Action:** Remove 'cursor-pointer' on container cards, use precise descriptive aria-labels for repeated actions like 'Explore' or 'Request', and apply scroll-pt-20 to prevent fixed headers from overlapping navigated landmarks.
