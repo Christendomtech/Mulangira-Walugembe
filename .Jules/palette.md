@@ -1,0 +1,3 @@
+## 2025-08-18 - Keyboard Bypass Links & Dynamic ARIA Labels in Single Page Portfolios
+**Learning:** Single-page navigation menus with fixed headers cause keyboard users to tab through repetitive links unless a focusable skip link and `<main id="main-content">` landmark are present. Additionally, repetitive action links ("Explore", "Request a copy") require contextual `aria-label`s to be distinct for screen reader rotor navigation.
+**Action:** Always include a `.skip-to-content` utility link targetting `<main id="main-content">`, ensure `scroll-pt-*` is applied on `html` for smooth offset, and supply unique `aria-label`s on mapped card actions.
