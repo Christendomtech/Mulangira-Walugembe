@@ -1,0 +1,3 @@
+## 2025-05-18 - Keyboard Navigation and Focus Bypass Link
+**Learning:** Fixed header navigation elements obscure targeted content when using anchor links (#main-content, #about, etc.) unless scroll padding (`scroll-pt-20`) is set on the `html` element. Furthermore, providing a focusable skip-to-content bypass link requires a semantic `<main id="main-content" tabIndex={-1}>` target to cleanly shift keyboard focus past top navigation.
+**Action:** When adding skip-to-content links and sticky navigation in landing pages, always ensure `html` has `scroll-pt-*` matching the header height and the primary container is wrapped in `<main id="main-content" tabIndex={-1}>`.
