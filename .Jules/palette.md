@@ -1,0 +1,3 @@
+## 2025-05-18 - Accessible Navigation & Screen Reader Clarity in Portfolio Layouts
+**Learning:** Decorative typography symbols (like dots in brand titles) and repeated call-to-action text ("Explore", "Request a copy") degrade screen reader experience if unhandled. Branding links need explicit `aria-label`s with decorative spans hidden, and action links require contextual `aria-label`s. Furthermore, `skip-to-content` bypass links combined with a `<main id="main-content" tabIndex={-1}>` wrapper are essential for keyboard navigation past fixed header bars.
+**Action:** Always wrap decorative dot separators in `aria-hidden="true"`, provide explicit `aria-label`s on generic CTA links, and verify `<main>` wrappers exist alongside `.skip-to-content` navigation utilities.
