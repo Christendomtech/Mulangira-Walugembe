@@ -1,0 +1,3 @@
+## 2025-08-23 - Tailwind CSS v4 Utility State Selectors and Skip Link Focus
+**Learning:** In Tailwind CSS v4, defining state variants directly in custom utility classes like `@utility skip-to-content:focus` is invalid; variants must be nested inside the `@utility` block using `&:focus`. Additionally, programmatically focusing elements in Playwright (`.focus()`) might not trigger `:focus-visible` styles, so simulating key presses (`page.keyboard.press('Tab')`) is required for accurate visual verification.
+**Action:** Always nest pseudo-class variants inside `@utility` blocks in `index.css` and use keyboard tab navigation in Playwright scripts when testing focus indicators.
