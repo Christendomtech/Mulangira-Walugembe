@@ -1,0 +1,3 @@
+## 2025-05-18 - Accessibility Bypass Links & Focus Indicators in Single-Page Portfolios
+**Learning:** Single-page portfolios with fixed navigation bars require a prominent skip-to-content bypass link (`#main-content`), explicit main content landmarking (`<main id="main-content" tabIndex={-1}>`), and clear `focus-visible` ring indicators across interactive links and dynamic CTA buttons to support keyboard and screen reader accessibility.
+**Action:** Always include a focusable `.skip-to-content` link positioned off-screen until focused, wrap primary content in `<main id="main-content">`, and add `focus-visible:ring-2 focus-visible:ring-accent` styling on interactive anchors and buttons.
