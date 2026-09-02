@@ -1,0 +1,3 @@
+## 2025-05-18 - Keyboard Navigation and Focus Landmarks in Portfolio Landing Page
+**Learning:** Fixed headers can obscure section focus targets during hash-based navigation, and single-page apps often lack a bypass link to directly access main content. Adding `scroll-pt-20` on `html` together with a `#main-content` landmark wrapper and a skip link significantly improves accessibility for screen reader and keyboard users without altering visual design.
+**Action:** Always complement fixed navigation with `@utility skip-to-content` and set `scroll-pt-*` on `html` for clean layout offsets during deep linking.
