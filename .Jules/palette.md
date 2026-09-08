@@ -1,0 +1,3 @@
+## 2025-05-18 - Semantic Link Formatting and Landmark Structure
+**Learning:** Generic repetitive link labels (like "Explore" or "Request a copy") reduce clarity for screen reader users, while decorative inline characters (like middle dots in branding or metadata strings) can be misread if not hidden with `aria-hidden="true"`.
+**Action:** Always wrap non-semantic visual dots or metadata separators in `aria-hidden="true"` spans, provide explicit `aria-label` attributes for card action links (e.g. `aria-label="Explore Coffee details"`), and wrap header/footer branding elements in semantic `Link` focusable elements.
