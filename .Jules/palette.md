@@ -1,0 +1,3 @@
+## 2025-05-18 - Semantic Navigation & Dynamic Link ARIA Labels
+**Learning:** Generic repeated link labels like "Explore" or "Request a copy" hinder screen reader navigation when presented out of context. Additionally, fixed header navigation overlays require scroll padding on the HTML root element (`scroll-pt-20`) to prevent hash link targets from being obscured.
+**Action:** Always wrap page main content in `<main id="main-content" tabIndex={-1}>`, provide explicit descriptive `aria-label` attributes for dynamic links (e.g. `aria-label="Request a copy of [Title]"`), hide decorative dot separators using `aria-hidden="true"`, and maintain `scroll-pt-20` on `html` for smooth target scrolling.
