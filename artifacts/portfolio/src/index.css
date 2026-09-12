@@ -149,3 +149,10 @@
     @apply font-serif tracking-tight;
   }
 }
+
+@utility skip-to-content {
+  @apply fixed left-6 -top-20 z-[100] bg-primary text-white px-4 py-2 rounded-sm text-sm font-medium shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  &:focus {
+    @apply top-4;
+  }
+}
