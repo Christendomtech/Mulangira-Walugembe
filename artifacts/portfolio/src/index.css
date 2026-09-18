@@ -140,6 +140,7 @@
     @apply border-border;
   }
   html {
+    @apply scroll-pt-20;
     scroll-behavior: smooth;
   }
   body {
@@ -147,5 +148,12 @@
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
+  }
+}
+
+@utility skip-to-content {
+  @apply fixed left-6 -top-20 z-[100] bg-primary text-white px-4 py-2 rounded-md transition-all shadow-lg;
+  &:focus {
+    @apply top-4 outline-none ring-2 ring-accent ring-offset-2;
   }
 }
