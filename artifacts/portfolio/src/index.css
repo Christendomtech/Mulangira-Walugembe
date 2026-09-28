@@ -135,11 +135,19 @@
   --ring: 37 60% 51%;
 }
 
+@utility skip-to-content {
+  @apply fixed left-6 -top-20 z-[100] px-4 py-2 bg-primary text-white border border-accent rounded-sm shadow-lg transition-all;
+  &:focus {
+    @apply top-6 outline-none ring-2 ring-accent ring-offset-2;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   html {
+    @apply scroll-pt-20;
     scroll-behavior: smooth;
   }
   body {
