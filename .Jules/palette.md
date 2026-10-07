@@ -1,0 +1,3 @@
+## 2025-05-18 - Skip to content & dynamic ARIA labels in portfolio components
+**Learning:** Screen readers and keyboard users require clear skip navigation landmarks to bypass top header navigation and direct focus to `#main-content`. Dynamic list items (like ventures and books) need descriptive unique `aria-label`s rather than repetitive "Explore" or "Request a copy" links to ensure distinct accessible contexts.
+**Action:** Always include a `sr-only focus:not-sr-only` skip link targeting `<main id="main-content">`, wrap key content in `<main>`, and construct dynamic `aria-label`s using the item title/context.
