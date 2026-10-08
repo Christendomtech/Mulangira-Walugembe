@@ -1,0 +1,3 @@
+## 2025-05-20 - Keyboard Bypass & ARIA Precision for Portfolio Single Page App
+**Learning:** Fixed header layouts without skip links trap screen reader and keyboard users in header navigation on every page load or focus refresh. Additionally, generic dynamic links ("Explore", "Request a copy") lack context when read out of order by assistive technologies.
+**Action:** Always include a `.skip-to-content` link positioned off-screen until focused, wrap primary content in `<main id="main-content" tabIndex={-1}>`, and construct explicit `aria-label`s for dynamic action links (e.g. `Explore ${item.title} details`).
