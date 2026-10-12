@@ -16,7 +16,7 @@ export default function Home() {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
   };
 
   const staggerContainer = {
@@ -31,25 +31,32 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-accent selection:text-white">
+      {/* Skip to Content */}
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+
       {/* Navigation */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent ${
           isScrolled ? "bg-primary/95 backdrop-blur-md border-primary shadow-sm py-4" : "bg-transparent py-6"
         }`}
+        aria-label="Main navigation"
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-          <Link href="/" className="font-serif text-2xl font-medium tracking-wide flex items-center gap-1 text-white hover:text-accent transition-colors">
-            Prince <span className="text-accent text-xl">·</span> Walugembe
+          <Link href="/" aria-label="Prince Edward Walugembe - Home" className="font-serif text-2xl font-medium tracking-wide flex items-center gap-1 text-white hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
+            Prince <span className="text-accent text-xl" aria-hidden="true">·</span> Walugembe
           </Link>
           <div className="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-white/80 font-medium">
-            <a href="#about" className="hover:text-accent transition-colors duration-300">About</a>
-            <a href="#work" className="hover:text-accent transition-colors duration-300">Work</a>
-            <a href="#books" className="hover:text-accent transition-colors duration-300">Books</a>
-            <a href="#contact" className="hover:text-accent transition-colors duration-300">Contact</a>
+            <a href="#about" className="hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">About</a>
+            <a href="#work" className="hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Work</a>
+            <a href="#books" className="hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Books</a>
+            <a href="#contact" className="hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Contact</a>
           </div>
         </div>
       </nav>
 
+      <main id="main-content" tabIndex={-1} className="outline-none">
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -288,27 +295,28 @@ export default function Home() {
             </p>
             <a 
               href="mailto:contact@princeedwardwalugembe.com"
-              className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-sm hover:bg-white hover:text-primary transition-all duration-300 uppercase tracking-widest text-sm font-medium"
+              className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-sm hover:bg-white hover:text-primary transition-all duration-300 uppercase tracking-widest text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
-              <Mail className="w-4 h-4" /> Send Email
+              <Mail className="w-4 h-4" aria-hidden="true" /> Send Email
             </a>
           </motion.div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="bg-[#4D0F1E] py-12 border-t border-white/10">
         <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-serif text-xl tracking-wide flex items-center gap-1 text-white/90">
-            Prince <span className="text-accent text-lg">·</span> Walugembe
-          </div>
+          <Link href="/" aria-label="Prince Edward Walugembe - Home" className="font-serif text-xl tracking-wide flex items-center gap-1 text-white/90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
+            Prince <span className="text-accent text-lg" aria-hidden="true">·</span> Walugembe
+          </Link>
           
-          <div className="flex gap-6 text-sm uppercase tracking-wider text-white/50 font-medium">
-            <a href="#about" className="hover:text-accent transition-colors">About</a>
-            <a href="#work" className="hover:text-accent transition-colors">Work</a>
-            <a href="#books" className="hover:text-accent transition-colors">Books</a>
-            <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
-          </div>
+          <nav aria-label="Footer navigation" className="flex gap-6 text-sm uppercase tracking-wider text-white/50 font-medium">
+            <a href="#about" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">About</a>
+            <a href="#work" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Work</a>
+            <a href="#books" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Books</a>
+            <a href="#contact" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Contact</a>
+          </nav>
 
           <div className="text-white/40 text-sm font-light">
             © {new Date().getFullYear()} All rights reserved.
