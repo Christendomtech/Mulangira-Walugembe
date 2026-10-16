@@ -1,0 +1,3 @@
+## 2025-05-20 - Skip to Content Bypass & Accessible Dynamic Links
+**Learning:** For single-page portfolio applications with fixed headers, keyboard accessibility requires an explicit bypass link (`.skip-to-content`), `<main id="main-content" tabIndex={-1}>` landmark target, and proper top scroll padding (`scroll-pt-20`). Dynamic cards with ambiguous links ("Explore", "Request a copy") must use descriptive `aria-label`s to give clear screen reader context.
+**Action:** Always include a skip link, main landmark wrapper, `scroll-pt-*`, and contextual `aria-label`s when building single-page landing layouts.
