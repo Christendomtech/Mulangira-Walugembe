@@ -1,0 +1,3 @@
+## 2025-05-15 - Portfolio Accessibility & Framer Motion Integration
+**Learning:** In Framer Motion variant objects, string transition properties like `ease: "easeOut"` cause TypeScript errors with strict typing unless explicitly cast with `as const`. Additionally, generic links ("Explore", "Request a copy") and decorative punctuation marks in branding logos need specific ARIA attributes (`aria-label` and `aria-hidden="true"`) to avoid confusing screen reader announcements.
+**Action:** Always cast Framer Motion easing values as `as const` and ensure all interactive components use unique descriptive `aria-label`s while wrapping decorative symbols with `aria-hidden="true"`.
