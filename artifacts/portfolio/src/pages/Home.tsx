@@ -16,7 +16,7 @@ export default function Home() {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
   };
 
   const staggerContainer = {
@@ -31,6 +31,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-accent selection:text-white">
+      {/* Skip to Main Content Link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-1/2 focus:-translate-x-1/2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:font-medium focus:rounded-sm focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
+      >
+        Skip to main content
+      </a>
+
       {/* Navigation */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent ${
@@ -38,18 +46,24 @@ export default function Home() {
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-          <Link href="/" className="font-serif text-2xl font-medium tracking-wide flex items-center gap-1 text-white hover:text-accent transition-colors">
-            Prince <span className="text-accent text-xl">·</span> Walugembe
+          <Link
+            href="/"
+            aria-label="Prince Edward Walugembe - Home"
+            className="font-serif text-2xl font-medium tracking-wide flex items-center gap-1 text-white hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm"
+          >
+            Prince <span className="text-accent text-xl" aria-hidden="true">·</span> Walugembe
           </Link>
           <div className="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-white/80 font-medium">
-            <a href="#about" className="hover:text-accent transition-colors duration-300">About</a>
-            <a href="#work" className="hover:text-accent transition-colors duration-300">Work</a>
-            <a href="#books" className="hover:text-accent transition-colors duration-300">Books</a>
-            <a href="#contact" className="hover:text-accent transition-colors duration-300">Contact</a>
+            <a href="#about" className="hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm">About</a>
+            <a href="#work" className="hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm">Work</a>
+            <a href="#books" className="hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm">Books</a>
+            <a href="#contact" className="hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm">Contact</a>
           </div>
         </div>
       </nav>
 
+      {/* Main Content Area */}
+      <main id="main-content" tabIndex={-1} className="outline-none">
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -77,9 +91,9 @@ export default function Home() {
             </p>
             <a 
               href="#contact"
-              className="inline-flex items-center gap-2 border border-accent text-accent px-8 py-4 rounded-sm hover:bg-accent hover:text-white transition-all duration-300 uppercase tracking-widest text-sm font-medium group"
+              className="inline-flex items-center gap-2 border border-accent text-accent px-8 py-4 rounded-sm hover:bg-accent hover:text-white transition-all duration-300 uppercase tracking-widest text-sm font-medium group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
             >
-              Begin a conversation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Begin a conversation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
           </motion.div>
         </div>
@@ -194,8 +208,12 @@ export default function Home() {
                 <p className="text-muted-foreground leading-relaxed font-light mb-8 flex-grow z-10">
                   {venture.desc}
                 </p>
-                <a href="#contact" className="inline-flex items-center gap-2 text-accent text-sm uppercase tracking-wider font-medium group-hover:text-primary transition-colors z-10">
-                  Explore <ExternalLink className="w-3 h-3" />
+                <a
+                  href="#contact"
+                  aria-label={`Explore ${venture.title} details`}
+                  className="inline-flex items-center gap-2 text-accent text-sm uppercase tracking-wider font-medium group-hover:text-primary transition-colors z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                >
+                  Explore <ExternalLink className="w-3 h-3" aria-hidden="true" />
                 </a>
               </motion.div>
             ))}
@@ -219,7 +237,7 @@ export default function Home() {
                 Reflections on heritage, leadership, and the long arc of African enterprise — written from inside the tradition, for readers everywhere.
               </p>
             </div>
-            <BookOpen className="w-12 h-12 text-accent opacity-50 hidden md:block" />
+            <BookOpen className="w-12 h-12 text-accent opacity-50 hidden md:block" aria-hidden="true" />
           </motion.div>
 
           <motion.div 
@@ -249,7 +267,7 @@ export default function Home() {
                 blurb: "A third blurb about the work and its relevance to heritage and enterprise."
               }
             ].map((book, i) => (
-              <motion.div key={i} variants={fadeInUp} className="group cursor-pointer">
+              <motion.div key={i} variants={fadeInUp} className="group">
                 <div className="aspect-[2/3] bg-background border border-border shadow-sm mb-8 flex items-center justify-center relative overflow-hidden group-hover:shadow-md transition-shadow duration-500">
                   {/* Placeholder Book Cover */}
                   <div className="absolute inset-0 border-[8px] border-secondary/50 m-4 flex flex-col items-center justify-center p-6 text-center">
@@ -258,13 +276,24 @@ export default function Home() {
                     <span className="text-[10px] uppercase tracking-widest text-muted-foreground mt-4 absolute bottom-8">Cover Placeholder</span>
                   </div>
                 </div>
-                <span className="text-xs uppercase tracking-widest text-accent mb-3 block font-medium">{book.meta}</span>
+                <span className="text-xs uppercase tracking-widest text-accent mb-3 block font-medium">
+                  {book.meta.split(" · ").map((part, index) => (
+                    <React.Fragment key={index}>
+                      {index > 0 && <span aria-hidden="true"> · </span>}
+                      {part}
+                    </React.Fragment>
+                  ))}
+                </span>
                 <h3 className="font-serif text-2xl text-primary mb-3">{book.title}</h3>
                 <p className="text-muted-foreground font-light mb-6 text-sm leading-relaxed">
                   {book.blurb}
                 </p>
-                <a href="#contact" className="inline-flex items-center gap-2 text-primary border-b border-primary/30 pb-1 text-sm font-medium uppercase tracking-wider group-hover:border-accent group-hover:text-accent transition-colors">
-                  Request a copy <ArrowRight className="w-3 h-3" />
+                <a
+                  href="#contact"
+                  aria-label={`Request a copy of ${book.title}`}
+                  className="inline-flex items-center gap-2 text-primary border-b border-primary/30 pb-1 text-sm font-medium uppercase tracking-wider group-hover:border-accent group-hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                >
+                  Request a copy <ArrowRight className="w-3 h-3" aria-hidden="true" />
                 </a>
               </motion.div>
             ))}
@@ -288,26 +317,31 @@ export default function Home() {
             </p>
             <a 
               href="mailto:contact@princeedwardwalugembe.com"
-              className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-sm hover:bg-white hover:text-primary transition-all duration-300 uppercase tracking-widest text-sm font-medium"
+              className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-sm hover:bg-white hover:text-primary transition-all duration-300 uppercase tracking-widest text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
             >
-              <Mail className="w-4 h-4" /> Send Email
+              <Mail className="w-4 h-4" aria-hidden="true" /> Send Email
             </a>
           </motion.div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="bg-[#4D0F1E] py-12 border-t border-white/10">
         <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-serif text-xl tracking-wide flex items-center gap-1 text-white/90">
-            Prince <span className="text-accent text-lg">·</span> Walugembe
-          </div>
+          <Link
+            href="/"
+            aria-label="Prince Edward Walugembe - Home"
+            className="font-serif text-xl tracking-wide flex items-center gap-1 text-white/90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+          >
+            Prince <span className="text-accent text-lg" aria-hidden="true">·</span> Walugembe
+          </Link>
           
           <div className="flex gap-6 text-sm uppercase tracking-wider text-white/50 font-medium">
-            <a href="#about" className="hover:text-accent transition-colors">About</a>
-            <a href="#work" className="hover:text-accent transition-colors">Work</a>
-            <a href="#books" className="hover:text-accent transition-colors">Books</a>
-            <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+            <a href="#about" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">About</a>
+            <a href="#work" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Work</a>
+            <a href="#books" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Books</a>
+            <a href="#contact" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Contact</a>
           </div>
 
           <div className="text-white/40 text-sm font-light">
