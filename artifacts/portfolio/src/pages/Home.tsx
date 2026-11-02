@@ -16,7 +16,7 @@ export default function Home() {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
   };
 
   const staggerContainer = {
@@ -31,15 +31,27 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-accent selection:text-white">
+      {/* Skip to Content bypass link */}
+      <a
+        href="#main-content"
+        className="fixed -top-20 left-1/2 -translate-x-1/2 focus:top-4 z-50 bg-accent text-white px-5 py-2.5 rounded-sm text-sm font-medium uppercase tracking-wider shadow-lg transition-all duration-200 outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
+      >
+        Skip to main content
+      </a>
+
       {/* Navigation */}
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent ${
+        className={`fixed top-0 w-full z-40 transition-all duration-500 border-b border-transparent ${
           isScrolled ? "bg-primary/95 backdrop-blur-md border-primary shadow-sm py-4" : "bg-transparent py-6"
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-          <Link href="/" className="font-serif text-2xl font-medium tracking-wide flex items-center gap-1 text-white hover:text-accent transition-colors">
-            Prince <span className="text-accent text-xl">·</span> Walugembe
+          <Link
+            href="/"
+            aria-label="Prince Edward Walugembe - Home"
+            className="font-serif text-2xl font-medium tracking-wide flex items-center gap-1 text-white hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+          >
+            Prince <span className="text-accent text-xl" aria-hidden="true">·</span> Walugembe
           </Link>
           <div className="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-white/80 font-medium">
             <a href="#about" className="hover:text-accent transition-colors duration-300">About</a>
@@ -50,6 +62,7 @@ export default function Home() {
         </div>
       </nav>
 
+      <main id="main-content" tabIndex={-1} className="outline-none">
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -295,6 +308,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="bg-[#4D0F1E] py-12 border-t border-white/10">
