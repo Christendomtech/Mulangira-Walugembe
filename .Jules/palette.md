@@ -1,0 +1,3 @@
+## 2025-10-30 - Accessible Skip Link & Screen Reader Navigation
+**Learning:** Screen reader and keyboard navigation in single-page portfolio applications requires explicit bypass links (`Skip to main content`) and `<main>` landmarks, along with unique ARIA labels on repetitive section links (e.g. "Explore" and "Request a copy") to prevent confusing screen reader experiences.
+**Action:** When working on portfolio landing pages, always wrap core sections in `<main id="main-content" tabIndex={-1}>`, provide a visible-on-focus skip link, and add descriptive `aria-label`s to generic card CTA links.
